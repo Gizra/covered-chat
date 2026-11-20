@@ -1,17 +1,23 @@
 {{ "<!-- footer.html -->" | safeHTML -}}
-<footer class="shrink-0 border-t border-slate-200 bg-slate-900 text-sm text-white">
+<footer class="shrink-0 border-t border-slate-200 bg-slate-900 text-sm text-white print:hidden">
   <div class="mx-auto w-full max-w-6xl px-4 py-8 md:px-6">
     <div class="flex flex-col gap-y-6 md:flex-row md:items-start md:justify-between">
       <div class="max-w-md">
         <p class="text-base font-bold">{{ site.Title }}</p>
-        <p class="mt-2 leading-relaxed text-slate-300">{{ site.Params.description }}</p>
+        <p class="mt-2 leading-relaxed text-slate-300">
+          Covered is operated by {{ site.Params.operator }}.
+          <a href="{{ site.Params.operatorUrl }}" class="rounded-sm text-white underline hover:text-slate-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">{{ site.Params.operatorUrl }}</a>
+        </p>
+        <p class="mt-2 text-slate-300">
+          Contact: <a href="mailto:{{ site.Params.contact }}" class="rounded-sm text-white underline hover:text-slate-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">{{ site.Params.contact }}</a>
+        </p>
       </div>
-      <div class="flex flex-col gap-y-3">
+      <nav aria-label="Legal" class="flex flex-col gap-y-3">
         {{ range site.Params.footerLegal }}
           <a href="{{ .url }}" class="w-max rounded-sm text-slate-300 hover:text-white hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">{{ .name }}</a>
         {{ end }}
-      </div>
+      </nav>
     </div>
-    <p class="mt-8 text-slate-400">© {{ now.Year }} {{ site.Title }}.</p>
+    <p class="mt-8 text-slate-400">© {{ now.Year }} {{ site.Params.operator }}.</p>
   </div>
 </footer>
