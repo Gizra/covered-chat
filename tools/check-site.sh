@@ -3,7 +3,7 @@
 # gizra.com link, and CNAME keeps the custom domain.
 set -u
 failed=0
-for page in index.html privacy/index.html terms/index.html sms-consent/index.html; do
+for page in index.html about/index.html privacy/index.html terms/index.html sms-consent/index.html; do
   if [ ! -f "public/$page" ]; then echo "missing: $page"; failed=1; continue; fi
   for needle in "Covered is operated by Gizra USA, LLC" "https://www.gizra.com" "info@gizra.com"; do
     grep -q "$needle" "public/$page" || { echo "$page lacks: $needle"; failed=1; }

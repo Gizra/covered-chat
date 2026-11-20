@@ -15,9 +15,9 @@
   /* The one project accent. Recolor here; everything else is stock Tailwind.
      These values pass WCAG AAA: white text on --color-accent, and
      --color-accent text on --color-accent-soft. */
-  --color-accent:      #065f46; /* action / link color (emerald-800) */
-  --color-accent-dark: #064e3b; /* hover (emerald-900) */
-  --color-accent-soft: #d1fae5; /* soft fills (emerald-100) */
+  --color-accent:      #4338ca; /* action / link color (indigo-700) */
+  --color-accent-dark: #3730a3; /* hover, and text on soft fills (indigo-800) */
+  --color-accent-soft: #e0e7ff; /* soft fills (indigo-100) */
 }
 
 @layer base {

@@ -11,7 +11,7 @@ const base = `http://localhost:${port}`;
 // The screens to check (WCAG 2.1 AAA). Add screens here as they are built. An
 // entry can be a plain path or an object ({ url, ...overrides }) when a screen
 // needs extra pa11y options such as a render `wait`.
-const paths = ['/', '/privacy/', '/terms/', '/sms-consent/'];
+const paths = ['/', '/about/', '/privacy/', '/terms/', '/sms-consent/'];
 
 module.exports = {
   defaults: {

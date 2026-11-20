@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="t">
+  <title id="t">Covered</title>
+  <path fill="#4338ca" d="M14 6h36a10 10 0 0 1 10 10v24a10 10 0 0 1-10 10H30l-12 10v-10h-4A10 10 0 0 1 4 40V16A10 10 0 0 1 14 6z"/>
+  <path fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" d="M19 28l9 9 17-17"/>
+</svg>

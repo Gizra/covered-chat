@@ -1,7 +1,8 @@
 {{ "<!-- header.html -->" | safeHTML -}}
 <header class="sticky top-0 z-50 shrink-0 border-b border-slate-200 bg-white print:hidden">
   <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 md:px-6">
-    <a href="{{ site.Home.RelPermalink }}" class="rounded-md text-lg font-bold tracking-tight text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+    <a href="{{ site.Home.RelPermalink }}" class="flex items-center gap-2 rounded-md text-xl font-bold tracking-tight text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+      <img src="{{ "images/covered-mark.svg" | relURL }}" alt="" class="h-8 w-8">
       {{ site.Title }}
     </a>
 

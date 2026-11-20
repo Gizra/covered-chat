@@ -1,5 +1,73 @@
 {{ define "main" }}
 <main class="flex grow flex-col">
-  {{ partial "prose.html" . }}
+  {{/* Hero */}}
+  <section class="border-b border-slate-200 bg-accent-soft">
+    <div class="mx-auto grid max-w-6xl gap-10 px-4 py-16 md:grid-cols-2 md:items-center md:px-6 md:py-24">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-wide text-accent-dark">Shift coverage for restaurants</p>
+        <h1 class="mt-3 text-4xl font-bold tracking-tight text-slate-900 md:text-5xl">Every shift covered, by text.</h1>
+        <p class="mt-6 text-lg leading-relaxed text-slate-800">
+          When someone calls in sick, Covered texts the staff who can work the shift, in the order you prefer. You run the schedule by chatting with Covered. Your staff just text.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="mailto:{{ site.Params.contact }}?subject=Covered" class="rounded-lg bg-accent px-5 py-3 font-semibold text-white hover:bg-accent-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Talk to us</a>
+          <a href="#how" class="rounded-lg border border-accent-dark px-5 py-3 font-semibold text-accent-dark hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">See how it works</a>
+        </div>
+      </div>
+      {{ partial "screenshot.html" (dict "src" "images/chat-who-can-cover.jpg" "alt" "Covered's chat answering \"Who can cover Sunday's AM Host?\" with four staff members ranked by how likely they are to say yes, and buttons to text them.") }}
+    </div>
+  </section>
+
+  {{/* Benefits */}}
+  <section aria-labelledby="benefits-title" class="mx-auto w-full max-w-6xl px-4 py-16 md:px-6">
+    <h2 id="benefits-title" class="text-3xl font-bold tracking-tight text-slate-900">Less time on the phone, fewer empty shifts</h2>
+    <ul class="mt-10 grid gap-8 md:grid-cols-2">
+      {{ range site.Data.benefits }}
+        <li class="rounded-xl border border-slate-200 bg-white p-6">
+          <h3 class="text-xl font-semibold text-slate-900">{{ .title }}</h3>
+          <p class="mt-3 leading-relaxed text-slate-800">{{ .text }}</p>
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+
+  {{/* How it works */}}
+  <section id="how" aria-labelledby="how-title" class="border-y border-slate-200 bg-slate-50">
+    <div class="mx-auto w-full max-w-6xl px-4 py-16 md:px-6">
+      <h2 id="how-title" class="text-3xl font-bold tracking-tight text-slate-900">How it works</h2>
+      <ol class="mt-10 grid gap-8 md:grid-cols-3">
+        {{ range $i, $step := site.Data.steps }}
+          <li>
+            <p class="flex h-10 w-10 items-center justify-center rounded-full bg-accent font-bold text-white" aria-hidden="true">{{ add $i 1 }}</p>
+            <h3 class="mt-4 text-xl font-semibold text-slate-900">{{ $step.title }}</h3>
+            <p class="mt-2 leading-relaxed text-slate-800">{{ $step.text }}</p>
+          </li>
+        {{ end }}
+      </ol>
+
+      <div class="mt-16 grid gap-10 md:grid-cols-3 md:items-start">
+        <figure class="md:col-span-2">
+          {{ partial "screenshot.html" (dict "src" "images/week-grid.jpg" "alt" "Covered's week grid: each slot by day, with who works it and when, and one open Sunday shift highlighted.") }}
+          <figcaption class="mt-3 text-sm text-slate-700">The week at a glance, in the same layout as your schedule sheet. Open shifts stand out.</figcaption>
+        </figure>
+        <figure>
+          {{ partial "screenshot.html" (dict "src" "images/staff-schedule.jpg" "alt" "A staff member's own schedule page on a phone, listing their next shifts with a Text Covered button for each.") }}
+          <figcaption class="mt-3 text-sm text-slate-700">Each staff member's own schedule page, made for a phone.</figcaption>
+        </figure>
+      </div>
+      <p class="mt-6 text-sm text-slate-700">Screenshots use made-up staff from Covered's demo.</p>
+    </div>
+  </section>
+
+  {{/* Closing call to action */}}
+  <section aria-labelledby="cta-title" class="mx-auto w-full max-w-6xl px-4 py-16 md:px-6">
+    <div class="max-w-3xl">
+      <h2 id="cta-title" class="text-3xl font-bold tracking-tight text-slate-900">Stop chasing cover</h2>
+      <p class="mt-4 text-lg leading-relaxed text-slate-800">
+        Tell us how your restaurant schedules today, and we'll show you Covered with your own shifts.
+      </p>
+      <a href="mailto:{{ site.Params.contact }}?subject=Covered" class="mt-8 inline-block rounded-lg bg-accent px-5 py-3 font-semibold text-white hover:bg-accent-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Talk to us about your restaurant</a>
+    </div>
+  </section>
 </main>
 {{ end }}
