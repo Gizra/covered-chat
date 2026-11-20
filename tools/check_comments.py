@@ -22,7 +22,9 @@ CODE_LIMIT = 30
 DOC_LIMIT = 30
 
 # Upstream's own files, vendored whole. Their comments are not ours to shorten.
-SKIP = ("*/.stylish-haskell.yaml", "*/static/vendor/*")
+SKIP = ("*/.stylish-haskell.yaml", "*/static/vendor/*", "/content/*")
+
+# content/ is published copy: the legal pages match the approved SMS campaign word for word.
 
 LINE_COMMENT = {
     ".cabal": ("--",),
